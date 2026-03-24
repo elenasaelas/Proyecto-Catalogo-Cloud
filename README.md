@@ -1,4 +1,4 @@
-# CatalogoCloud XSD — Refactorización con los 8 Indicadores Clave
+# CatalogoCloud XSD — Refactorización de CatalogoCloud_v2.xsd y CatalogoCloud_v2.xml
 
 **Módulo:** LMSGI
 **Autor:** Elena Sáez Lascurain  
