@@ -9,16 +9,16 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     
     <xs:attributeGroup name="AtributosServidor">
-        <xs:attribute name="id"     type="xs:ID"     use="required"/>
-        <xs:attribute name="rack"   type="xs:string"/>
-        <xs:attribute name="estado" type="xs:string"/>
+        <xs:attribute name="id" type="TipoIdServidor" use="required"/>
+        <xs:attribute name="rack" type="TipoRack" use="required"/>
+        <xs:attribute name="estado" type="TipoEstado" use="required"/>
     </xs:attributeGroup>
     
     <xs:group name="ComponentesHardware">
         <xs:sequence>
             <xs:element ref="cpu"/>
             <xs:element ref="ram"/>
-            <xs:element ref="gpu"    minOccurs="0" maxOccurs="8"/>
+            <xs:element ref="gpu" minOccurs="0" maxOccurs="8"/>
             <xs:element ref="discos"/>
         </xs:sequence>
     </xs:group>
@@ -27,8 +27,8 @@
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="nucleos"      type="xs:integer" use="required"/>
-                    <xs:attribute name="arquitectura" type="xs:string"  use="required"/>
+                    <xs:attribute name="nucleos" type="xs:integer" use="required"/>
+                    <xs:attribute name="arquitectura" type="xs:string" use="required"/>
                 </xs:extension>
             </xs:simpleContent>
         </xs:complexType>
@@ -54,7 +54,7 @@
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="modelo"  type="xs:string"  use="required"/>
+                    <xs:attribute name="modelo" type="xs:string" use="required"/>
                     <xs:attribute name="vram_gb" type="xs:integer" use="required"/>
                 </xs:extension>
             </xs:simpleContent>
@@ -74,7 +74,7 @@
                             </xs:simpleType>
                         </xs:attribute>
                         <xs:attribute name="capacidad_tb" type="xs:integer" use="required"/>
-                        <xs:attribute name="principal"    type="xs:boolean" use="required"/>
+                        <xs:attribute name="principal" type="xs:boolean" use="required"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
@@ -132,14 +132,6 @@
                                         <xs:element name="software">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="red" minOccurs="0">
-                                                        <xs:complexType>
-                                                            <xs:choice>
-                                                                <xs:element name="ip_fija" type="xs:string"/>
-                                                                <xs:element name="dhcp"    type="xs:boolean"/>
-                                                            </xs:choice>
-                                                        </xs:complexType>
-                                                    </xs:element>
                                                     <xs:element name="so">
                                                         <xs:complexType>
                                                             <xs:simpleContent>
@@ -169,6 +161,15 @@
                                                         </xs:complexType>
                                                     </xs:element>
                                                 </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        
+                                        <xs:element name="red" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:choice>
+                                                    <xs:element name="ip_fija" type="xs:string"/>
+                                                    <xs:element name="dhcp" type="xs:boolean"/>
+                                                </xs:choice>
                                             </xs:complexType>
                                         </xs:element>
                                         

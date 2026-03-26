@@ -29,6 +29,9 @@
                     <servicio puerto="443">Nginx HTTPS</servicio>
                 </servicios>
             </software>
+            <red>
+                <ip_fija>192.168.001.352</ip_fija>
+            </red>
         </servidor>
 
         <servidor id="srv-db-01" rack="A2" estado="mantenimiento">
@@ -45,6 +48,9 @@
                     <servicio puerto="5432">PostgreSQL</servicio>
                 </servicios>
             </software>
+            <red>
+                <ip_fija>192.128.021.222</ip_fija>
+            </red>
         </servidor>
 
     </centro_datos>
@@ -69,6 +75,9 @@
                     <servicio puerto="8888">Jupyter Hub</servicio>
                 </servicios>
             </software>
+            <red>
+                <ip_fija>192.108.101.342</ip_fija>
+            </red>
         </servidor>
 
         <servidor id="srv-backup-01" rack="B2" estado="apagado">
@@ -87,6 +96,9 @@
                     <servicio puerto="873">Rsync</servicio>
                 </servicios>
             </software>
+            <red>
+                <ip_fija>192.108.041.327</ip_fija>
+            </red>
         </servidor>
 
     </centro_datos>
